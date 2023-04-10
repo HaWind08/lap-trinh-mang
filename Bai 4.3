@@ -1,0 +1,37 @@
+#include<iostream>
+using namespace std;
+
+int tvh(int x[],int y[], int n)
+{
+	int tichvohuong = 0;
+	for (int i = 0; i < n; i++)
+	{
+		tichvohuong = tichvohuong + x[i] * y[i];
+	}
+	return tichvohuong;
+
+}
+int main()
+{
+	int n;
+	cout << "So phan tu cua vecto: "; cin >> n;
+
+	int x[n], y[n];
+
+	cout << "Nhap cac gia tri cho vecto x: " << endl;
+	for (int i = 0; i < n; i++)
+	{
+		cout << "x[" << i << "]=";
+		cin >> x[i];
+	}
+
+	cout << "Nhap cac gia tri cho vecto y: " << endl;
+	for (int i = 0; i < n; i++)
+	{
+		cout << "y[" << i << "]=";
+		cin >> y[i];
+	}
+
+	cout << "Tich vo huong cua 2 vecto la: " << tvh(x,y,n);
+	return 0;
+}

@@ -1,0 +1,56 @@
+// 3 phần tử liên tiếp bằng nhau
+
+#include<iostream>
+
+using namespace std;
+
+void Nhap(int a[], int &n)
+{
+	cout << "Nhap n: "; cin >> n;
+	cout << "Nhap mang: " << endl;
+	for(int i = 0;i < n; i++)
+	{
+		cout << "a[" <<i<< "]= "; cin >> a[i];
+	}
+}
+
+void Xuat(int a[], int n)
+{
+	for(int i = 0;i < n; i++)
+	{
+		cout << a[i] << " ";
+	}
+	cout << endl;
+}
+
+bool TimKiem(int a[], int n)
+{
+	for(int i = 0; i< n - 2;i++)
+	{
+		if(a[i] == a[i+1] && a[i+1] == a[i+2])
+		{
+			return true;
+		}
+	}
+	return false;
+}
+
+int main()
+{
+	int a[1001], n;
+	Nhap(a,n);
+	Xuat(a,n);
+	
+	if(TimKiem(a,n))
+	{
+		cout << "Co ton tai 3 phan tu lien tiep bang nhau";
+	}
+	else cout << "Khong ton tai 3 phan tu lien tiep bang nhau";
+}
+
+
+
+
+
+
+

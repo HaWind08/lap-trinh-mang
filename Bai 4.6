@@ -1,0 +1,81 @@
+#include<iostream>
+#include<math.h>
+#include<iomanip>
+
+using namespace std;
+
+void Nhap(double a[100], double &n)
+{
+	cout << "Nhap n: "; cin >> n;
+
+	cout << "Nhap vecto X: " << endl;
+	for (int i = 0; i < n; i++)
+	{
+		cout << "a[" << i << "]= ";
+		cin >> a[i];
+	}
+}
+
+void Chuan1(double a[100], double n)
+{
+	double X1 = 0;
+	for (int i = 0; i < n; i++)
+	{
+		X1 += abs(a[i]);
+	}
+	cout << "Chuan 1: " << X1;
+}
+
+void Chuan2(double a[100], double n)
+{
+	double TongTrongCan = 0, X2;
+	for (int i = 0; i < n; i++)
+	{
+		TongTrongCan += a[i] * a[i];
+	}
+	X2 = sqrt(TongTrongCan);
+	cout << "Chuan 2: " << X2;
+}
+
+void ChuanVoCung(double a[100], double n)
+{
+	double max = a[0];
+	for (int i = 1; i < n; i++)
+	{
+		if (a[i] > max) max = a[i];
+	}
+	cout <<"Chuan Vo Cung: "<< max;
+}
+
+void Chuan0(double a[100], double n)
+{
+	double Dem = 0;
+	for (int i = 0; i < n; i++)
+	{
+		if (a[i] != 0)
+		{
+			Dem++;
+		}
+	}
+	cout << "Chuan 0: " << "So phan tu khac 0 cua day la : " << Dem << endl;
+
+}
+
+int main()
+{
+	double a[100], n;
+	Nhap(a, n);
+
+	Chuan1(a, n);
+	cout << endl;
+
+	Chuan2(a, n);
+	cout << endl;
+
+	ChuanVoCung(a, n);
+	cout << endl;
+
+	Chuan0(a, n);
+
+	return 0;
+}
